@@ -1,7 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JobTitles.Data\JobTitles.Data.csproj" />
+    <ProjectReference Include="..\JobTitles.Domain\JobTitles.Domain.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using JobTitles.Business.Services;
+using JobTitles.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +26,7 @@ namespace JobTitles.Server
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddScoped<JobTitleService>();
+            services.AddSingleton<IJobTitleClient, JobTitleClient>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>

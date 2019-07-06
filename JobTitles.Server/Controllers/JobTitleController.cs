@@ -25,7 +25,7 @@ namespace JobTitles.Server.Controllers
         [HttpGet]
         public async Task<IEnumerable<JobTitle>> Get()
         {
-            return await _service.GetAll();
+            return await _service.GetAllAsync();
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace JobTitles.Server.Controllers
         [HttpGet("{id}")]
         public async Task<JobTitle> Get(int id)
         {
-            return await _service.Get(id);
+            return await _service.GetAsync(id);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace JobTitles.Server.Controllers
         [HttpGet("{name}")]
         public async Task<JobTitle> Get(string name)
         {
-            return await _service.Get(name);
+            return await _service.GetAsync(name);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace JobTitles.Server.Controllers
         [HttpPost]
         public async void Post([FromBody] string jobTitle)
         {
-            _service.Insert(jobTitle);
+            _service.InsertAsync(jobTitle);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace JobTitles.Server.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
-            _service.Update(id, value);
+            _service.UpdateAsync(id, value);
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace JobTitles.Server.Controllers
         [HttpPut("{name}")]
         public void Put(string name, [FromBody] string value)
         {
-            _service.Update(name, value);
+            _service.UpdateAsync(name, value);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace JobTitles.Server.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _service.Delete(id);
+            _service.DeleteAsync(id);
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace JobTitles.Server.Controllers
         [HttpDelete("{name}")]
         public void Delete(string name)
         {
-            _service.Delete(name);
+            _service.DeleteAsync(name);
         }
     }
 }
